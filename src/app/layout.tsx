@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import "../styles/whatsappBtn.css";
 import FloatingWhatsAppButton from "../components/FloatingWhatsAppButton";
 
 export const metadata: Metadata = {
