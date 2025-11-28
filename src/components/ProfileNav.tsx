@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "../styles/form.css";
@@ -8,6 +8,18 @@ export default function ProfileNav() {
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
   const isLoggedIn = typeof window !== "undefined" && window.sessionStorage.getItem("user_email");
+
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (showMenu) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [showMenu]);
 
 
   // Show login/signup form in popout
