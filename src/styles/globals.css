@@ -1,3 +1,13 @@
+/* Product image utility for consistent aspect ratio */
+.product-image {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f3f4f6;
+  display: block;
+  margin-bottom: 0.5rem;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
 @tailwind base;
