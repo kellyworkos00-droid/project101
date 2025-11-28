@@ -111,7 +111,7 @@ export default function Home() {
   ];
   return (
     <div className="min-h-screen w-full bg-white font-sans flex flex-col items-center justify-start">
-      <header className="w-full flex items-center justify-between py-6 bg-gradient-to-r from-blue-700 via-blue-500 to-blue-300 shadow-md border-b border-gray-100 px-6">
+      <header className="w-full flex items-center justify-between py-6 bg-white shadow-md border-b border-gray-100 px-6">
         <div className="flex items-center gap-3">
           <Image
             src="/new_logo-removebg-preview.png"
@@ -120,38 +120,21 @@ export default function Home() {
             height={40}
             priority
           />
-          <span className="text-xl font-bold text-white tracking-wide">Supacoat</span>
         </div>
-        <nav className="hidden md:flex gap-6">
-          <a href="#products" className="text-white font-semibold hover:underline">Products</a>
-          <a href="#contact" className="text-white font-semibold hover:underline">Contact</a>
-        </nav>
+        {/* Top nav removed. Floating bottom navbar added below. */}
       </header>
       <main className="flex flex-col items-center w-full max-w-4xl px-2 sm:px-4 py-6 sm:py-10">
         <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-700 mb-4 leading-tight">Welcome to Supacoat Investments</h1>
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Your Trusted Hardware Wholesale Partner in Kenya</h2>
-            <p className="text-base sm:text-lg text-gray-700 mb-4 max-w-lg">
-              Supacoat is a reliable hardware wholesale supply store based in Ruiru – Kamakis.<br />
-              We specialize in providing quality hardware products at affordable wholesale prices to retailers, contractors, carpenters, and DIY builders across Kenya.
-            </p>
-            <p className="text-base sm:text-lg text-gray-700 mb-4 max-w-lg">
-              From hinges, brackets, drawer mechanisms, pipes, and fittings to many other hardware essentials, Supacoat ensures you get durable products, fast service, and consistent supply — all under one roof.
-            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">Supacoat Merchants</h1>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Hardware Wholesale Partner</h2>
             <p className="text-base sm:text-lg text-gray-700 mb-6 max-w-lg">
-              Let Supacoat be the backbone of your building and business projects.
+              Reliable hardware wholesale supply store in Ruiru – Kamakis. Quality products, fast service, and consistent supply — all under one roof.
             </p>
             <a href="#products" className="inline-block px-6 py-3 rounded-full bg-red-600 text-white font-bold text-lg shadow hover:bg-red-700 transition">Shop Now</a>
           </div>
-          <div className="flex-1 flex justify-center">
-            <Image
-              src="/hero_supacoat.png"
-              alt="Supacoat Hero"
-              width={320}
-              height={220}
-              className="rounded-xl shadow-lg object-cover"
-            />
+          <div className="w-full md:w-auto mb-6 md:mb-0 md:ml-8 flex-shrink-0">
+            <ProductSlider products={products} />
           </div>
         </section>
         <section id="products" className="w-full">
@@ -184,6 +167,16 @@ export default function Home() {
           </div>
         </section>
       </main>
+    {/* Floating bottom navbar */}
+    {/* Floating joined nav bar */}
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[120] bg-white border border-gray-200 shadow-lg rounded-full px-6 py-3 flex gap-8 items-center justify-center">
+      <a href="#products" className="p-2 flex items-center justify-center rounded-full hover:bg-gray-100 transition" aria-label="Products">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#1f2937" d="M3 7V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v1"/><rect width="18" height="13" x="3" y="7" fill="#e5e7eb" rx="2"/><path stroke="#1f2937" strokeWidth="2" d="M3 7V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v1"/><rect width="18" height="13" x="3" y="7" stroke="#1f2937" strokeWidth="2" rx="2"/></svg>
+      </a>
+      <a href="#contact" className="p-2 flex items-center justify-center rounded-full hover:bg-gray-100 transition" aria-label="Contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#1f2937" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path stroke="#1f2937" strokeWidth="2" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path fill="#e5e7eb" d="M21 8.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1.5l9 5.5 9-5.5Z"/><path stroke="#1f2937" strokeWidth="2" d="m3 8.5 9 5.5 9-5.5"/></svg>
+      </a>
     </div>
+  </div>
   );
 }
