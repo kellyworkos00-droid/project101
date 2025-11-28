@@ -148,11 +148,11 @@ export default function Home() {
         </section>
         <section id="products" className="w-full">
           <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Our Products</h2>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 px-2 sm:px-0">
             {products.map((product) => (
               <a
                 href={`/product/${product.id}`}
-                className="card flex flex-col items-center justify-between p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none"
+                className="card flex flex-col items-center justify-between p-3 sm:p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none min-h-[260px] w-full"
                 style={{ textDecoration: 'none' }}
                 aria-label={`View details for ${product.name}`}
               >
