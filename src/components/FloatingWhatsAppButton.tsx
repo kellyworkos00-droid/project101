@@ -1,4 +1,5 @@
 
+"use client";
 import { useState } from "react";
 const whatsappNumber = "254702771771"; // Kenyan format for WhatsApp link
 const defaultMessage = "Hello, I would like to order Supacoat.";
@@ -6,7 +7,7 @@ const defaultMessage = "Hello, I would like to order Supacoat.";
 const FloatingWhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   return (
-    <div className="fixed bottom-4 right-4 z-[110] flex flex-col items-center" style={{background: 'rgba(255,255,255,0.05)', borderRadius: '50%', boxShadow: '0 2px 12px rgba(0,0,0,0.18)'}}>
+    <div className="fixed bottom-4 right-4 z-[110] flex flex-col items-center" style={{background: 'white', borderRadius: '50%', boxShadow: '0 2px 12px rgba(0,0,0,0.18)', border: '2px solid #e5e7eb', padding: '10px'}}>
       <a
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`}
         className="btn-whatsapp animate-bounce"
@@ -22,7 +23,7 @@ const FloatingWhatsAppButton = () => {
         </svg>
       </a>
       {showTooltip && (
-        <div className="mb-2 px-3 py-1 rounded bg-gray-900 text-white text-xs shadow-lg animate-fade-in">
+        <div className="mb-2 px-4 py-2 rounded-lg bg-green-600 text-white text-sm shadow-xl animate-fade-in font-semibold" style={{maxWidth: '180px', textAlign: 'center'}}>
           Chat with us on WhatsApp!
         </div>
       )}
