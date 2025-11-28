@@ -205,11 +205,11 @@ export default function Home() {
       </div>
       {/* Profile icon for login/account */}
       {/* Profile icon only, no modal */}
-      <div className="relative">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="p-2 rounded-full hover:bg-gray-100 transition">
-          <circle cx="14" cy="14" r="14" fill="#111" />
-          <ellipse cx="14" cy="11" rx="5.25" ry="5.25" fill="#fff" />
-          <ellipse cx="14" cy="21" rx="7.5" ry="4.5" fill="#fff" />
+      <div className="relative flex items-center justify-center">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="rounded-full hover:bg-gray-100 transition" style={{display: 'block'}}>
+          <circle cx="14" cy="14" r="12" fill="#111" />
+          <ellipse cx="14" cy="12" rx="5" ry="5" fill="#fff" />
+          <ellipse cx="14" cy="20" rx="7" ry="4" fill="#fff" />
         </svg>
       </div>
       </div>
