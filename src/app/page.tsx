@@ -111,41 +111,65 @@ export default function Home() {
   ];
   return (
     <div className="min-h-screen w-full bg-white font-sans flex flex-col items-center justify-start">
-      <header className="w-full flex items-center justify-start py-6 bg-white shadow-md border-b border-gray-100 px-6">
-        <Image
-          src="/new_logo-removebg-preview.png"
-          alt="Supacoat Logo"
-          width={120}
-          height={40}
-          priority
-        />
-      </header>
-      <main className="flex flex-col items-center w-full max-w-3xl px-4 py-10">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Welcome to Supacoat</h1>
-        <p className="text-lg text-gray-700 mb-8 text-center max-w-xl">
-          Discover premium products with a clean, mobile-friendly shopping experience.
-        </p>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
-          {products.map((product) => (
-            <div key={product.id} className="card flex flex-col items-center justify-between p-4">
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={160}
-                height={120}
-                className="rounded mb-2 object-cover"
-              />
-              <h2 className="text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
-              <p className="text-red-600 font-semibold mb-2 text-center">KES {product.price.toLocaleString()}</p>
-              <a
-                href={`/product/${product.id}`}
-                className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition"
-              >
-                View Product
-              </a>
-            </div>
-          ))}
+      <header className="w-full flex items-center justify-between py-6 bg-gradient-to-r from-blue-700 via-blue-500 to-blue-300 shadow-md border-b border-gray-100 px-6">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/new_logo-removebg-preview.png"
+            alt="Supacoat Logo"
+            width={120}
+            height={40}
+            priority
+          />
+          <span className="text-xl font-bold text-white tracking-wide">Supacoat</span>
         </div>
+        <nav className="hidden md:flex gap-6">
+          <a href="#products" className="text-white font-semibold hover:underline">Products</a>
+          <a href="#contact" className="text-white font-semibold hover:underline">Contact</a>
+        </nav>
+      </header>
+      <main className="flex flex-col items-center w-full max-w-4xl px-4 py-10">
+        <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-blue-700 mb-4 leading-tight">Welcome to Supacoat</h1>
+            <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-lg">
+              Discover premium products for a cleaner, brighter future. Shop with confidence and enjoy a seamless, mobile-friendly experience.
+            </p>
+            <a href="#products" className="inline-block px-6 py-3 rounded-full bg-red-600 text-white font-bold text-lg shadow hover:bg-red-700 transition">Shop Now</a>
+          </div>
+          <div className="flex-1 flex justify-center">
+            <Image
+              src="/hero_supacoat.png"
+              alt="Supacoat Hero"
+              width={320}
+              height={220}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
+        </section>
+        <section id="products" className="w-full">
+          <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Our Products</h2>
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {products.map((product) => (
+              <div key={product.id} className="card flex flex-col items-center justify-between p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={160}
+                  height={120}
+                  className="rounded mb-2 object-cover"
+                />
+                <h2 className="text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
+                <p className="text-red-600 font-semibold mb-2 text-center">KES {product.price.toLocaleString()}</p>
+                <a
+                  href={`/product/${product.id}`}
+                  className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition"
+                >
+                  View Product
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
     </div>
   );
