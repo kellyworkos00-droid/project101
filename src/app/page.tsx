@@ -141,10 +141,8 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-4 sm:mb-6 text-center">Our Products</h2>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 px-0">
             {products.map((product) => (
-              <a
-                href={`/product/${product.id}`}
+              <div
                 className="card flex flex-col items-center justify-between p-2 sm:p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none min-h-[220px] w-full max-w-xs mx-auto overflow-hidden"
-                style={{ textDecoration: 'none' }}
                 aria-label={`View details for ${product.name}`}
               >
                 <div className="w-full flex flex-col flex-1 items-center justify-between">
@@ -158,13 +156,15 @@ export default function Home() {
                   <h2 className="text-base sm:text-lg font-bold text-blue-700 mb-1 text-center truncate w-full">{product.name}</h2>
                   <p className="text-red-600 font-semibold mb-2 text-center text-sm sm:text-base truncate w-full">KES {product.price.toLocaleString()}</p>
                 </div>
-                <span
-                  className="px-3 py-2 rounded-full bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow hover:bg-blue-800 transition mt-2 w-full text-center truncate"
-                  style={{ pointerEvents: 'none' }}
+                <a
+                  href={`/product/${product.id}`}
+                  className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition mt-2 w-full text-center"
+                  style={{ textDecoration: 'none' }}
+                  aria-label={`View details for ${product.name}`}
                 >
                   View Product
-                </span>
-              </a>
+                </a>
+              </div>
             ))}
           </div>
         </section>
