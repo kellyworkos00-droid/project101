@@ -28,7 +28,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
             className="rounded mb-2 object-cover"
           />
           <h2 className="text-lg font-bold text-blue-700 mb-1">{product.name}</h2>
-          <p className="text-red-600 font-semibold mb-2">${product.price.toFixed(2)}</p>
+          <p className="text-red-600 font-semibold mb-2">KES {product.price.toLocaleString()}</p>
           <a
             href={`/product/${product.id}`}
             className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition"
