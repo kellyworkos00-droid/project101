@@ -2,15 +2,17 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import "../styles/form.css";
 
 export default function ProfileNav() {
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
   const isLoggedIn = typeof window !== "undefined" && window.sessionStorage.getItem("user_email");
 
+
+  // Show login/signup form in popout
   function handleLogin() {
-    // Redirect to Google OAuth (placeholder, implement next)
-    router.push("/auth/google");
+    setShowMenu(true);
   }
 
   function handleLogout() {
@@ -31,19 +33,33 @@ export default function ProfileNav() {
         <Image src="/profile-icon.svg" alt="Profile" width={32} height={32} />
       </button>
       {showMenu && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
+        <div className="absolute right-0 mt-2 z-50">
           {isLoggedIn ? (
-            <>
-              <div className="px-4 py-2 text-gray-700">Logged in as <b>{window.sessionStorage.getItem("user_email")}</b></div>
-              <button className="w-full px-4 py-2 text-left hover:bg-gray-100" onClick={handleLogout}>Logout</button>
+            <div className="form-container">
+              <div className="title">Profile</div>
+              <div className="input-group">Logged in as <b>{window.sessionStorage.getItem("user_email")}</b></div>
+              <button className="sign mt-4" onClick={handleLogout}>Logout</button>
               {window.sessionStorage.getItem("user_email") === "supacoatinvestmentltd@gmail.com" && (
-                <button className="w-full px-4 py-2 text-left hover:bg-gray-100" onClick={() => router.push("/admin/panel")}>Admin Panel</button>
+                <button className="sign mt-2" onClick={() => router.push("/admin/panel")}>Admin Panel</button>
               )}
-            </>
+            </div>
           ) : (
-            <>
-              <button className="w-full px-4 py-2 text-left hover:bg-gray-100" onClick={handleLogin}>Login / Create Account</button>
-            </>
+            <div className="form-container">
+              <div className="title">Login / Create Account</div>
+              <form className="form" onSubmit={e => {
+                e.preventDefault();
+                const email = (e.target as any).email.value;
+                window.sessionStorage.setItem("user_email", email);
+                setShowMenu(false);
+                router.refresh();
+              }}>
+                <div className="input-group">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" name="email" id="email" required />
+                </div>
+                <button type="submit" className="sign mt-4">Continue</button>
+              </form>
+            </div>
           )}
         </div>
       )}
