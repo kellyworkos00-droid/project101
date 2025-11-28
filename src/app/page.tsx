@@ -127,7 +127,7 @@ export default function Home() {
           <a href="#contact" className="text-white font-semibold hover:underline">Contact</a>
         </nav>
       </header>
-      <main className="flex flex-col items-center w-full max-w-4xl px-4 py-10">
+      <main className="flex flex-col items-center w-full max-w-4xl px-2 sm:px-4 py-6 sm:py-10">
         <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-5xl md:text-6xl font-extrabold text-blue-700 mb-4 leading-tight">Welcome to Supacoat</h1>
@@ -147,12 +147,12 @@ export default function Home() {
           </div>
         </section>
         <section id="products" className="w-full">
-          <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Our Products</h2>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 px-2 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-4 sm:mb-6 text-center">Our Products</h2>
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 px-0">
             {products.map((product) => (
               <a
                 href={`/product/${product.id}`}
-                className="card flex flex-col items-center justify-between p-3 sm:p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none min-h-[260px] w-full"
+                className="card flex flex-col items-center justify-between p-2 sm:p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none min-h-[240px] w-full"
                 style={{ textDecoration: 'none' }}
                 aria-label={`View details for ${product.name}`}
               >
@@ -163,10 +163,10 @@ export default function Home() {
                   height={120}
                   className="product-image"
                 />
-                <h2 className="text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
-                <p className="text-red-600 font-semibold mb-2 text-center">KES {product.price.toLocaleString()}</p>
+                <h2 className="text-base sm:text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
+                <p className="text-red-600 font-semibold mb-2 text-center text-sm sm:text-base">KES {product.price.toLocaleString()}</p>
                 <span
-                  className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition mt-2"
+                  className="px-3 py-2 rounded-full bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow hover:bg-blue-800 transition mt-2"
                   style={{ pointerEvents: 'none' }}
                 >
                   View Product
