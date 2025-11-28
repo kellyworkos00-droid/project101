@@ -1,0 +1,17 @@
+/* From Uiverse.io by Yaya12085 */
+.loader {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 #0a7cbe;
+  animation: load 2s linear infinite alternate;
+}
+
+@keyframes load {
+  0% {
+    box-shadow: inset -20px 40px 0 #0a7cbe;
+  }
+  100% {
+    box-shadow: inset 20px -40px 0 #0a7cbe;
+  }
+}
