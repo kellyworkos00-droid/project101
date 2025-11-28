@@ -204,7 +204,10 @@ export default function Home() {
         <span className="absolute bottom-12 left-1/2 -translate-x-1/2 px-3 py-1 rounded bg-gray-900 text-white text-xs shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">Contact</span>
       </div>
       {/* Profile icon for login/account */}
-      {/* ProfileNav removed as requested */}
+      {/* Profile icon only, no modal */}
+      <div className="relative">
+        <img src="/profile-icon.svg" alt="Profile" width={32} height={32} className="p-2 rounded-full hover:bg-gray-100 transition" />
+      </div>
     </div>
   </div>
   );
