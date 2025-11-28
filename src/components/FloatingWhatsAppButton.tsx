@@ -1,3 +1,5 @@
+const whatsappNumber = "254702771771"; // Kenyan format for WhatsApp link
+const defaultMessage = "Hello, I would like to order Supacoat.";
 
 const FloatingWhatsAppButton = () => (
   <a
