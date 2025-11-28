@@ -4,26 +4,20 @@ import { notFound } from "next/navigation";
 
 const products = [
   {
-    id: "1",
-    name: "Supacoat Classic",
-    image: "/file.svg",
-    price: 29.99,
-    description: "A classic protective coat for everyday use. Durable and stylish.",
+    id: "IMG-20250522-WA0085",
+    name: "Product 1",
+    image: "/IMG-20250522-WA0085.jpg",
+    price: 1200,
+    description: "High-quality Supacoat product for all your needs.",
   },
   {
-    id: "2",
-    name: "Supacoat Premium",
-    image: "/globe.svg",
-    price: 49.99,
-    description: "Premium protection with advanced features for demanding environments.",
+    id: "IMG-20250522-WA0086",
+    name: "Product 2",
+    image: "/IMG-20250522-WA0086.jpg",
+    price: 950,
+    description: "Reliable and affordable Supacoat solution.",
   },
-  {
-    id: "3",
-    name: "Supacoat Ultra",
-    image: "/window.svg",
-    price: 69.99,
-    description: "Ultra protection for extreme conditions. Maximum durability and comfort.",
-  },
+  // ...add more products as needed
 ];
 
 export default function ProductPage({ params }: { params: { id: string } }) {
@@ -42,10 +36,15 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         />
         <h1 className="text-3xl font-bold text-blue-700 mb-2 text-center">{product.name}</h1>
         <p className="text-lg text-gray-700 mb-4 text-center">{product.description}</p>
-        <div className="text-2xl font-semibold text-red-600 mb-6">${product.price.toFixed(2)}</div>
-        <button className="px-8 py-3 rounded-full bg-blue-700 text-white font-bold text-lg shadow hover:bg-blue-800 transition">
-          Add to Cart
-        </button>
+        <div className="text-2xl font-semibold text-red-600 mb-6">KES {product.price.toLocaleString()}</div>
+        <a
+          href={`https://wa.me/254702771771?text=I'm interested in ${product.name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-3 rounded-full bg-green-500 text-white font-bold text-lg shadow hover:bg-green-600 transition"
+        >
+          Order via WhatsApp
+        </a>
       </div>
     </div>
   );

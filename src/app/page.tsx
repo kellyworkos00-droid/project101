@@ -150,7 +150,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Our Products</h2>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="card flex flex-col items-center justify-between p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100">
+              <a
+                href={`/product/${product.id}`}
+                className="card flex flex-col items-center justify-between p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none"
+                style={{ textDecoration: 'none' }}
+                aria-label={`View details for ${product.name}`}
+              >
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -160,13 +165,13 @@ export default function Home() {
                 />
                 <h2 className="text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
                 <p className="text-red-600 font-semibold mb-2 text-center">KES {product.price.toLocaleString()}</p>
-                <a
-                  href={`/product/${product.id}`}
-                  className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition"
+                <span
+                  className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition mt-2"
+                  style={{ pointerEvents: 'none' }}
                 >
                   View Product
-                </a>
-              </div>
+                </span>
+              </a>
             ))}
           </div>
         </section>
