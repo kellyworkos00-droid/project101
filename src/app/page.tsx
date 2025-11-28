@@ -152,7 +152,7 @@ export default function Home() {
                     alt={product.name}
                     width={120}
                     height={90}
-                    className="product-image mb-2 w-full h-auto object-cover rounded"
+                    className="product-image mb-2 w-full h-[90px] object-contain rounded"
                   />
                   <h2 className="text-base sm:text-lg font-bold text-blue-700 mb-1 text-center truncate w-full">{product.name}</h2>
                   <p className="text-red-600 font-semibold mb-2 text-center text-sm sm:text-base truncate w-full">KES {product.price.toLocaleString()}</p>
