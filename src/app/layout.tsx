@@ -17,8 +17,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased bg-white">
         {children}
+        <footer className="w-full mt-12 bg-gradient-to-r from-blue-700 via-blue-500 to-blue-300 text-white py-8 px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center md:items-start">
+            <span className="text-2xl font-bold mb-2">Supacoat</span>
+            <span className="text-sm">© {new Date().getFullYear()} Supacoat Ltd. All rights reserved.</span>
+          </div>
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <span className="font-semibold">Contact:</span>
+            <a href="tel:+254702771771" className="text-white hover:underline">+254 702 771 771</a>
+            <a href="mailto:info@supacoat.co.ke" className="text-white hover:underline">info@supacoat.co.ke</a>
+            <div className="flex gap-4 mt-2">
+              <a href="https://wa.me/254702771771" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-300">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.657.336 3.236.957 4.68L2 22l5.395-1.957A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.61 0-3.16-.39-4.52-1.13l-.32-.17-3.2 1.16.68-3.13-.15-.32A7.963 7.963 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.13-5.47c-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.51.12-.15.23-.58.75-.71.9-.13.15-.26.17-.48.06-.23-.12-.97-.36-1.85-1.13-.68-.6-1.14-1.34-1.27-1.56-.13-.23-.01-.35.11-.47.11-.11.23-.29.34-.43.11-.15.15-.25.23-.41.08-.17.04-.32-.02-.44-.06-.12-.51-1.23-.7-1.68-.18-.44-.37-.38-.51-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.21.22-.8.78-.8 1.9s.82 2.21.93 2.37c.11.15 1.61 2.46 3.91 3.34.55.19.98.3 1.31.39.55.14 1.05.12 1.45.07.44-.06 1.36-.56 1.55-1.1.19-.54.19-1 .13-1.1-.06-.09-.21-.15-.44-.27z"/></svg>
+              </a>
+              <a href="https://facebook.com/supacoat" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-200">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.104C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0z"/></svg>
+              </a>
+              <a href="https://instagram.com/supacoat" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-pink-200">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.011 3.584-.069 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.975-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.011-4.85-.069c-1.366-.062-2.633-.334-3.608-1.308-.975-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.98.98-1.213 2.092-1.272 3.374C2.013 8.332 2 8.741 2 12c0 3.259.013 3.668.072 4.948.059 1.282.292 2.394 1.272 3.374.981.981 2.093 1.213 3.374 1.272C8.332 23.987 8.741 24 12 24c3.259 0 3.668-.013 4.948-.072 1.282-.059 2.394-.292 3.374-1.272.981-.98 1.213-2.092 1.272-3.374.059-1.28.072-1.689.072-4.948 0-3.259-.013-3.668-.072-4.948-.059-1.282-.292-2.394-1.272-3.374-.98-.981-2.092-1.213-3.374-1.272C15.668.013 15.259 0 12 0zm0 5.838A6.162 6.162 0 0 0 5.838 12 6.162 6.162 0 0 0 12 18.162 6.162 6.162 0 0 0 18.162 12 6.162 6.162 0 0 0 12 5.838zm0 10.162A3.999 3.999 0 1 1 12 8a3.999 3.999 0 0 1 0 7.999zm6.406-11.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+              </a>
+            </div>
+          </div>
+        </footer>
         <FloatingWhatsAppButton />
       </body>
     </html>
