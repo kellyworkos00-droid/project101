@@ -27,7 +27,7 @@ export default function Home() {
   ];
   return (
     <div className="min-h-screen w-full bg-white font-sans flex flex-col items-center justify-start">
-      <header className="w-full flex items-center justify-center py-6 bg-white shadow-md border-b border-gray-100">
+      <header className="w-full flex items-center justify-start py-6 bg-white shadow-md border-b border-gray-100 px-6">
         <Image
           src="/new_logo-removebg-preview.png"
           alt="Supacoat Logo"
