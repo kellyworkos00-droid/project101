@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ProductSlider, { Product } from "../components/ProductSlider";
-import ProfileNav from "../components/ProfileNav";
+// import ProfileNav from "../components/ProfileNav";
 
 export default function Home() {
   // Example product data
@@ -204,9 +204,7 @@ export default function Home() {
         <span className="absolute bottom-12 left-1/2 -translate-x-1/2 px-3 py-1 rounded bg-gray-900 text-white text-xs shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">Contact</span>
       </div>
       {/* Profile icon for login/account */}
-      <div className="relative">
-        <ProfileNav />
-      </div>
+      {/* ProfileNav removed as requested */}
     </div>
   </div>
   );
