@@ -142,6 +142,7 @@ export default function Home() {
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 px-0">
             {products.map((product) => (
               <div
+                key={product.id}
                 className="card flex flex-col items-center justify-between p-2 sm:p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none min-h-[220px] w-full max-w-xs mx-auto overflow-hidden"
                 aria-label={`View details for ${product.name}`}
               >
