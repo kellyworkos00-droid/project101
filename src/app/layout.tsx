@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import "../styles/whatsappBtn.css";
+import "../styles/productCard.css";
 import FloatingWhatsAppButton from "../components/FloatingWhatsAppButton";
 
 export const metadata: Metadata = {

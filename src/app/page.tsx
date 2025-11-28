@@ -127,12 +127,12 @@ export default function Home() {
         </p>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
           {products.map((product) => (
-            <div key={product.id} className="bg-blue-50 rounded-lg shadow p-4 flex flex-col items-center border-2 border-red-500">
+            <div key={product.id} className="card flex flex-col items-center justify-between p-4">
               <Image
                 src={product.image}
                 alt={product.name}
-                width={220}
-                height={160}
+                width={160}
+                height={120}
                 className="rounded mb-2 object-cover"
               />
               <h2 className="text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
