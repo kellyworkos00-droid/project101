@@ -206,10 +206,10 @@ export default function Home() {
       {/* Profile icon for login/account */}
       {/* Profile icon only, no modal */}
       <div className="relative">
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" className="p-2 rounded-full hover:bg-gray-100 transition">
-          <circle cx="16" cy="16" r="16" fill="#111" />
-          <ellipse cx="16" cy="13" rx="6" ry="6" fill="#fff" />
-          <ellipse cx="16" cy="24" rx="9" ry="5" fill="#fff" />
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="p-2 rounded-full hover:bg-gray-100 transition">
+          <circle cx="14" cy="14" r="14" fill="#111" />
+          <ellipse cx="14" cy="11" rx="5.25" ry="5.25" fill="#fff" />
+          <ellipse cx="14" cy="21" rx="7.5" ry="4.5" fill="#fff" />
         </svg>
       </div>
       </div>
