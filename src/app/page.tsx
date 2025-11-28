@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ProductSlider, { Product } from "../components/ProductSlider";
+import { useState } from "react";
 // import ProfileNav from "../components/ProfileNav";
 
 export default function Home() {
@@ -205,13 +206,52 @@ export default function Home() {
       </div>
       {/* Profile icon for login/account */}
       {/* Profile icon only, no modal */}
-      <div className="relative flex items-center justify-center">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="rounded-full hover:bg-gray-100 transition" style={{display: 'block'}}>
-          <circle cx="14" cy="14" r="12" fill="#111" />
-          <ellipse cx="14" cy="12" rx="5" ry="5" fill="#fff" />
-          <ellipse cx="14" cy="20" rx="7" ry="4" fill="#fff" />
-        </svg>
-      </div>
+      {(() => {
+        const [showLogin, setShowLogin] = useState(false);
+        return (
+          <div className="relative flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="rounded-full hover:bg-gray-100 transition cursor-pointer" style={{display: 'block'}} onClick={() => setShowLogin(true)}>
+              <circle cx="14" cy="14" r="12" fill="#111" />
+              <ellipse cx="14" cy="12" rx="5" ry="5" fill="#fff" />
+              <ellipse cx="14" cy="20" rx="7" ry="4" fill="#fff" />
+            </svg>
+            {showLogin && (
+              <div className="fixed inset-0 z-[9999] bg-black bg-opacity-60 flex items-center justify-center">
+                <div className="form-container" style={{
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
+                  minWidth: 'min(320px, 90vw)',
+                  maxWidth: 'min(360px, 95vw)',
+                  width: '100%',
+                  maxHeight: '80vh',
+                  overflow: 'auto',
+                  position: 'fixed',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  marginBottom: '80px',
+                  zIndex: 99999,
+                }}>
+                  <button className="absolute top-2 right-2 text-white text-xl" onClick={() => setShowLogin(false)} aria-label="Close">&times;</button>
+                  <div className="title">Login / Create Account</div>
+                  <form className="form" onSubmit={e => {
+                    e.preventDefault();
+                    setShowLogin(false);
+                  }}>
+                    <div className="input-group">
+                      <label htmlFor="email">Email</label>
+                      <input type="email" name="email" id="email" required />
+                    </div>
+                    <button type="submit" className="sign mt-4">Continue</button>
+                  </form>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })()}
       </div>
     </div>
   );
