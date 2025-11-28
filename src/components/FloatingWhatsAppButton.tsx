@@ -1,9 +1,11 @@
 import React from "react";
 
+const whatsappNumber = "234702771771";
+const defaultMessage = "Hi Supacoat, I want to order!";
 
 const FloatingWhatsAppButton = () => (
   <a
-    href={`https://wa.me/234702771771?text=${encodeURIComponent(defaultMessage)}`}
+    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`}
     className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#128C7E] transition-all border border-white"
     target="_blank"
     rel="noopener noreferrer"
