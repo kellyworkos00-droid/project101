@@ -45,9 +45,23 @@ export default function ProfileNav() {
         <Image src="/profile-icon.svg" alt="Profile" width={32} height={32} />
       </button>
       {showMenu && (
-        <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-black bg-opacity-60">
+        <div className="fixed inset-0 z-[2000] bg-black bg-opacity-60">
           {isLoggedIn ? (
-            <div className="form-container relative" style={{boxShadow: '0 8px 32px rgba(0,0,0,0.35)', minWidth: 340, maxWidth: 400, width: '100%', maxHeight: '90vh', overflow: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}> 
+            <div className="form-container" style={{
+              boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
+              minWidth: 340,
+              maxWidth: 400,
+              width: '100%',
+              maxHeight: '90vh',
+              overflow: 'auto',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}>
               <button className="absolute top-2 right-2 text-white text-xl" onClick={() => setShowMenu(false)} aria-label="Close">&times;</button>
               <div className="title">Profile</div>
               <div className="input-group">Logged in as <b>{window.sessionStorage.getItem("user_email")}</b></div>
