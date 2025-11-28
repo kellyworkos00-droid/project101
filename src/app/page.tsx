@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ProductSlider, { Product } from "../components/ProductSlider";
+import ProfileNav from "../components/ProfileNav";
 
 export default function Home() {
   // Example product data
@@ -201,6 +202,10 @@ export default function Home() {
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#1f2937" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path stroke="#1f2937" strokeWidth="2" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path fill="#e5e7eb" d="M21 8.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1.5l9 5.5 9-5.5Z"/><path stroke="#1f2937" strokeWidth="2" d="m3 8.5 9 5.5 9-5.5"/></svg>
         </a>
         <span className="absolute bottom-12 left-1/2 -translate-x-1/2 px-3 py-1 rounded bg-gray-900 text-white text-xs shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">Contact</span>
+      </div>
+      {/* Profile icon for login/account */}
+      <div className="relative">
+        <ProfileNav />
       </div>
     </div>
   </div>
