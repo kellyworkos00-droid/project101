@@ -7,7 +7,7 @@ import { useState } from "react";
 const FloatingWhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center">
+    <div className="fixed bottom-4 right-4 z-[110] flex flex-col items-center" style={{background: 'rgba(255,255,255,0.05)', borderRadius: '50%', boxShadow: '0 2px 12px rgba(0,0,0,0.18)'}}>
       <a
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`}
         className="btn-whatsapp animate-bounce"
