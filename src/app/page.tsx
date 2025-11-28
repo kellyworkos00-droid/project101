@@ -1,7 +1,30 @@
 
+
 import Image from "next/image";
+import ProductSlider, { Product } from "../components/ProductSlider";
 
 export default function Home() {
+  // Example product data
+  const products: Product[] = [
+    {
+      id: "1",
+      name: "Supacoat Classic",
+      image: "/file.svg",
+      price: 29.99,
+    },
+    {
+      id: "2",
+      name: "Supacoat Premium",
+      image: "/globe.svg",
+      price: 49.99,
+    },
+    {
+      id: "3",
+      name: "Supacoat Ultra",
+      image: "/window.svg",
+      price: 69.99,
+    },
+  ];
   return (
     <div className="min-h-screen w-full bg-white font-sans flex flex-col items-center justify-start">
       <header className="w-full flex items-center justify-center py-6 bg-blue-700 shadow-md">
@@ -19,12 +42,7 @@ export default function Home() {
           Discover premium products with a clean, mobile-friendly shopping experience.
         </p>
         <div className="w-full flex flex-col gap-6 items-center">
-          {/* Example product slider placeholder */}
-          <div className="w-full max-w-lg overflow-x-auto whitespace-nowrap py-4">
-            <div className="inline-block w-64 h-40 bg-blue-100 rounded-lg shadow mr-4 align-top border-4 border-red-500"></div>
-            <div className="inline-block w-64 h-40 bg-blue-100 rounded-lg shadow mr-4 align-top border-4 border-red-500"></div>
-            <div className="inline-block w-64 h-40 bg-blue-100 rounded-lg shadow align-top border-4 border-red-500"></div>
-          </div>
+          <ProductSlider products={products} />
           <a
             href="#shop"
             className="mt-6 px-6 py-3 rounded-full bg-red-600 text-white font-semibold text-lg shadow hover:bg-red-700 transition"
