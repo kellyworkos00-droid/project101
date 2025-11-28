@@ -125,14 +125,26 @@ export default function Home() {
         <p className="text-lg text-gray-700 mb-8 text-center max-w-xl">
           Discover premium products with a clean, mobile-friendly shopping experience.
         </p>
-        <div className="w-full flex flex-col gap-6 items-center">
-          <ProductSlider products={products} />
-          <a
-            href="#shop"
-            className="mt-6 px-6 py-3 rounded-full bg-red-600 text-white font-semibold text-lg shadow hover:bg-red-700 transition"
-          >
-            Shop Now
-          </a>
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+          {products.map((product) => (
+            <div key={product.id} className="bg-blue-50 rounded-lg shadow p-4 flex flex-col items-center border-2 border-red-500">
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={220}
+                height={160}
+                className="rounded mb-2 object-cover"
+              />
+              <h2 className="text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
+              <p className="text-red-600 font-semibold mb-2 text-center">KES {product.price.toLocaleString()}</p>
+              <a
+                href={`/product/${product.id}`}
+                className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold text-sm shadow hover:bg-blue-800 transition"
+              >
+                View Product
+              </a>
+            </div>
+          ))}
         </div>
       </main>
     </div>
