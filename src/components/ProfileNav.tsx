@@ -45,16 +45,16 @@ export default function ProfileNav() {
         <Image src="/profile-icon.svg" alt="Profile" width={32} height={32} />
       </button>
       {showMenu && (
-        <div className="fixed inset-0 z-[2000] bg-black bg-opacity-60">
+        <div className="fixed inset-0 z-[3000] bg-black bg-opacity-60 flex items-center justify-center">
           {isLoggedIn ? (
             <div className="form-container" style={{
               boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
-              minWidth: 340,
+              minWidth: '90vw',
               maxWidth: 400,
               width: '100%',
               maxHeight: '90vh',
               overflow: 'auto',
-              position: 'absolute',
+              position: 'fixed',
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
