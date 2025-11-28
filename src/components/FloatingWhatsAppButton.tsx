@@ -1,8 +1,7 @@
-const whatsappNumber = "254702771771"; // Kenyan format for WhatsApp link
-const defaultMessage = "Hello, I would like to order Supacoat.";
-
 
 import { useState } from "react";
+const whatsappNumber = "254702771771"; // Kenyan format for WhatsApp link
+const defaultMessage = "Hello, I would like to order Supacoat.";
 
 const FloatingWhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(false);
