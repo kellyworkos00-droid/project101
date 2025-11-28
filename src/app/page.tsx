@@ -130,9 +130,17 @@ export default function Home() {
       <main className="flex flex-col items-center w-full max-w-4xl px-2 sm:px-4 py-6 sm:py-10">
         <section className="w-full flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-blue-700 mb-4 leading-tight">Welcome to Supacoat</h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-lg">
-              Discover premium products for a cleaner, brighter future. Shop with confidence and enjoy a seamless, mobile-friendly experience.
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-700 mb-4 leading-tight">Welcome to Supacoat Investments</h1>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Your Trusted Hardware Wholesale Partner in Kenya</h2>
+            <p className="text-base sm:text-lg text-gray-700 mb-4 max-w-lg">
+              Supacoat is a reliable hardware wholesale supply store based in Ruiru – Kamakis.<br />
+              We specialize in providing quality hardware products at affordable wholesale prices to retailers, contractors, carpenters, and DIY builders across Kenya.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 mb-4 max-w-lg">
+              From hinges, brackets, drawer mechanisms, pipes, and fittings to many other hardware essentials, Supacoat ensures you get durable products, fast service, and consistent supply — all under one roof.
+            </p>
+            <p className="text-base sm:text-lg text-gray-700 mb-6 max-w-lg">
+              Let Supacoat be the backbone of your building and business projects.
             </p>
             <a href="#products" className="inline-block px-6 py-3 rounded-full bg-red-600 text-white font-bold text-lg shadow hover:bg-red-700 transition">Shop Now</a>
           </div>
