@@ -7,7 +7,7 @@ const defaultMessage = "Hello, I would like to order Supacoat.";
 const FloatingWhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   return (
-    <div className="fixed bottom-4 right-4 z-[110] flex flex-col items-center" style={{background: 'white', borderRadius: '50%', boxShadow: '0 2px 12px rgba(0,0,0,0.18)', border: '2px solid #e5e7eb', padding: '10px'}}>
+    <div className="fixed bottom-4 right-4 z-[110] flex flex-col items-center sm:bottom-6 sm:right-6" style={{background: 'white', borderRadius: '50%', boxShadow: '0 2px 12px rgba(0,0,0,0.18)', border: '2px solid #e5e7eb', padding: '10px', maxWidth: '56px', maxHeight: '56px'}}>
       <a
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`}
         className="btn-whatsapp animate-bounce"

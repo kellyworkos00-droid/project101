@@ -143,21 +143,23 @@ export default function Home() {
             {products.map((product) => (
               <a
                 href={`/product/${product.id}`}
-                className="card flex flex-col items-center justify-between p-2 sm:p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none min-h-[240px] w-full"
+                className="card flex flex-col items-center justify-between p-2 sm:p-4 bg-white rounded-xl shadow-lg hover:shadow-2xl transition border border-gray-100 hover:-translate-y-2 hover:scale-105 focus:outline-none min-h-[220px] w-full max-w-xs mx-auto overflow-hidden"
                 style={{ textDecoration: 'none' }}
                 aria-label={`View details for ${product.name}`}
               >
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={160}
-                  height={120}
-                  className="product-image"
-                />
-                <h2 className="text-base sm:text-lg font-bold text-blue-700 mb-1 text-center">{product.name}</h2>
-                <p className="text-red-600 font-semibold mb-2 text-center text-sm sm:text-base">KES {product.price.toLocaleString()}</p>
+                <div className="w-full flex flex-col flex-1 items-center justify-between">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={120}
+                    height={90}
+                    className="product-image mb-2 w-full h-auto object-cover rounded"
+                  />
+                  <h2 className="text-base sm:text-lg font-bold text-blue-700 mb-1 text-center truncate w-full">{product.name}</h2>
+                  <p className="text-red-600 font-semibold mb-2 text-center text-sm sm:text-base truncate w-full">KES {product.price.toLocaleString()}</p>
+                </div>
                 <span
-                  className="px-3 py-2 rounded-full bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow hover:bg-blue-800 transition mt-2"
+                  className="px-3 py-2 rounded-full bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow hover:bg-blue-800 transition mt-2 w-full text-center truncate"
                   style={{ pointerEvents: 'none' }}
                 >
                   View Product
@@ -170,12 +172,18 @@ export default function Home() {
     {/* Floating bottom navbar */}
     {/* Floating joined nav bar */}
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[120] bg-white border border-gray-200 shadow-lg rounded-full px-6 py-3 flex gap-8 items-center justify-center">
-      <a href="#products" className="p-2 flex items-center justify-center rounded-full hover:bg-gray-100 transition" aria-label="Products">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#1f2937" d="M3 7V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v1"/><rect width="18" height="13" x="3" y="7" fill="#e5e7eb" rx="2"/><path stroke="#1f2937" strokeWidth="2" d="M3 7V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v1"/><rect width="18" height="13" x="3" y="7" stroke="#1f2937" strokeWidth="2" rx="2"/></svg>
-      </a>
-      <a href="#contact" className="p-2 flex items-center justify-center rounded-full hover:bg-gray-100 transition" aria-label="Contact">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#1f2937" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path stroke="#1f2937" strokeWidth="2" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path fill="#e5e7eb" d="M21 8.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1.5l9 5.5 9-5.5Z"/><path stroke="#1f2937" strokeWidth="2" d="m3 8.5 9 5.5 9-5.5"/></svg>
-      </a>
+      <div className="relative group">
+        <a href="#products" className="p-2 flex items-center justify-center rounded-full hover:bg-gray-100 transition" aria-label="Products">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#1f2937" d="M3 7V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v1"/><rect width="18" height="13" x="3" y="7" fill="#e5e7eb" rx="2"/><path stroke="#1f2937" strokeWidth="2" d="M3 7V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v1"/><rect width="18" height="13" x="3" y="7" stroke="#1f2937" strokeWidth="2" rx="2"/></svg>
+        </a>
+        <span className="absolute bottom-12 left-1/2 -translate-x-1/2 px-3 py-1 rounded bg-gray-900 text-white text-xs shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">Products</span>
+      </div>
+      <div className="relative group">
+        <a href="#contact" className="p-2 flex items-center justify-center rounded-full hover:bg-gray-100 transition" aria-label="Contact">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="#1f2937" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path stroke="#1f2937" strokeWidth="2" d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5"/><path fill="#e5e7eb" d="M21 8.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v1.5l9 5.5 9-5.5Z"/><path stroke="#1f2937" strokeWidth="2" d="m3 8.5 9 5.5 9-5.5"/></svg>
+        </a>
+        <span className="absolute bottom-12 left-1/2 -translate-x-1/2 px-3 py-1 rounded bg-gray-900 text-white text-xs shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">Contact</span>
+      </div>
     </div>
   </div>
   );
